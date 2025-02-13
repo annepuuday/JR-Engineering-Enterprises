@@ -1,0 +1,816 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #b7b7b7;
+    padding: 0px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    height: 90px;
+    width: auto;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-right: 30px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.nav-links a i {
+    margin-right: 8px;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Language Selector Dropdown */
+.language-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 15px; 
+}
+
+.language-selector i {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+#languageSelector {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #575757;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    width: 120px; 
+}
+
+#languageSelector:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Dropdown Arrow */
+#languageSelector::after {
+    content: '▼';
+    font-size: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Responsive Menu */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        font-size: 1.8rem;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 60px;
+        top: 18px;
+        padding-right: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #b7b7b7;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        display: block;
+        width: 100%; 
+        text-align: center;
+    }
+
+    /* Language Selector */
+    .language-selector {
+        display: flex;
+        justify-content: flex-start; 
+        margin-top: 15px; 
+        width: 100%;
+        padding-left: 10px; 
+    }
+
+    #languageSelector {
+        width: 90%; 
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #575757;
+        appearance: none;
+        cursor: pointer;
+    }
+
+    /* Show navbar when menu toggle is checked */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+}
+
+/* Sections */
+section {
+    padding: 75px;
+    text-align: center;
+}
+
+/* Home Section */
+#home {
+    background: url('https://img.freepik.com/free-photo/construction-site-operations-background_1409-5622.jpg?t=st=1739284193~exp=1739287793~hmac=72148dc8bbd3891c50f527247a550e4a07bf1224ecb451b2a4603c562533c2ec&w=2000') no-repeat center center;
+    background-size: cover; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; 
+    padding: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #home {
+        background-attachment: fixed; 
+        height: auto;
+        min-height: 70vh; 
+        padding: 50px 20px; 
+        text-align: center;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeInUp 2s ease-out;
+}
+
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1.2rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #e68900;
+}
+
+/* About Us Section */
+#company {
+    padding: 60px 20px;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/028/642/325/small_2x/professional-engineer-in-protective-helmet-and-blueprints-paper-at-house-building-construction-site-photo.jpg') center/cover no-repeat; /* Transparent Background */
+    background-attachment: fixed; 
+    text-align: left;
+    position: relative;
+}
+
+#company::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); 
+    z-index: 1;
+}
+
+.company-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.company-card {
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.company-info {
+    width: 45%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.company-info h3 {
+    font-size: 1.7rem;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.company-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.company-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.company-info ul li {
+    font-size: 1rem;
+    color: #444;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.company-info ul li i {
+    color: #4CAF50;
+}
+
+#company h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .company-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .company-card{
+        width: 96%;
+        background-color: rgba(255, 255, 255, 0.9); 
+    } 
+    
+    .company-info {
+        width: 92%;
+        background-color: rgba(255, 255, 255, 0.9); 
+    }
+
+    .company-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .company-info p {
+        font-size: 1rem;
+    }
+
+    .company-info ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Font Awesome Icons Styling */
+.fas {
+    color: #ff9800;
+    font-size: 1.3rem;
+}
+
+/* Services Section with Transparent Background Image */
+#services {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    background: url('https://png.pngtree.com/thumb_back/fh260/background/20240527/pngtree-auto-mechanic-repairs-car-engine-image_15732589.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Adding a semi-transparent overlay for better readability */
+#services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+}
+
+/* Ensuring all content is above the overlay */
+#services h2,
+.services-container {
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+/* Styling for Service Cards */
+.service-card {
+    background: rgba(255, 255, 255, 0.85); 
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #222;
+    margin: 15px 0;
+}
+
+.service-card p {
+    font-size: 1rem;
+    padding: 0 15px;
+    color: #666;
+}
+
+.service-card button {
+    background-color: #123357;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 15px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.service-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #services {
+        background-attachment: scroll; 
+        background-size: cover;
+    }
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Enquiry Section  */
+#enquiry {
+    padding: 50px 10%;
+    background: url('https://media.istockphoto.com/id/1398884901/photo/engineer-working-in-the-oil-and-gas-industry-using-laptop.jpg?s=612x612&w=0&k=20&c=J264lvioXyqGEQOTaFTxd3yJXZn493eAhqvrcgqMVVk=') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+#enquiry h1 {
+    position: relative;
+    margin-top: 55px;
+    color: white;
+    font-size: 2.5rem;
+    z-index: 1;
+}
+
+
+/* Dark Overlay for Better Readability */
+#enquiry::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+/* Enquiry Content Container */
+.enquiry-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Enquiry Container */
+.enquiry-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Left Side - Image Card */
+.enquiry-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.enquiry-image:hover {
+    transform: scale(1.05);
+}
+
+.enquiry-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Right Side - Text Content */
+.enquiry-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.enquiry-content:hover {
+    transform: scale(1.05);
+}
+
+.enquiry-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Highlighted Words */
+.highlight {
+    color: black;
+    font-weight: bold;
+}
+
+/* Paragraph Styles */
+.enquiry-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.enquiry-content i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+/* Free & No Charges (Same Line) */
+.enquiry-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.enquiry-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Call-to-Action Text */
+.cta-text {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Enquiry Button */
+.enquiry-btn {
+    background: #123357;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.enquiry-btn:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .enquiry-container {
+        flex-direction: column;
+        text-align: center;
+        width: 92%;
+    }
+
+    .enquiry-content {
+        text-align: center;
+    }
+
+    .enquiry-content p {
+        justify-content: center;
+    }
+
+    .enquiry-info {
+        flex-direction: column;
+    }
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 50px 10%;
+    position: relative;
+    color: black; 
+}
+
+/* Transparent Background with an Image */
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://static.vecteezy.com/system/resources/previews/028/634/193/non_2x/workers-in-industrial-factory-free-photo.jpg') no-repeat center center/cover;
+    opacity: 0.3; 
+    z-index: -1;
+}
+
+/* Contact Section Heading */
+h2 {
+    margin-top: 55px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: bold;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Contact Cards */
+.contact-card {
+    display: flex;
+    align-items: center;
+    background: white; 
+    color: black;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+}
+
+.contact-card i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #007bff;
+}
+
+.contact-card p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Contact Map */
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #contact {
+        padding: 40px 5%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #b7b7b7;
+    color: black;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: black;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00aced; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
