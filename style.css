@@ -225,6 +225,21 @@ section {
     vertical-align: middle;
 }
 
+/* Responsive styling for small screens */
+@media (max-width: 600px) {
+    h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        height: 100px; 
+        margin: 5px 0; 
+    }
+}
+
 #home p {
     font-size: 1.5rem;
     margin-top: 10px;
