@@ -219,6 +219,12 @@ section {
     animation: fadeInUp 1.5s ease-out;
 }
 
+.logo {
+    height: 100px; 
+    margin: 0 10px; 
+    vertical-align: middle;
+}
+
 #home p {
     font-size: 1.5rem;
     margin-top: 10px;
